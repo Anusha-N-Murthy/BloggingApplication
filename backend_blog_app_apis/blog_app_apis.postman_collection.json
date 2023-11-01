@@ -1,0 +1,2040 @@
+{
+	"info": {
+		"_postman_id": "b9beccec-a778-40aa-be16-cea1dbb40e8d",
+		"name": "blog_app_apis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13213270"
+	},
+	"item": [
+		{
+			"name": "Token",
+			"item": [
+				{
+					"name": "Login-getToken",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"saurabh@gmail.com\",\r\n    \"password\": \"abc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOSTNAME}}:{{PORT}}/api/auth/login",
+							"host": [
+								"{{HOSTNAME}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "user-  CreateUser by using Token in Header",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYXVyYWJoQGdtYWlsLmNvbSIsImV4cCI6MTY5NzQ0MzQ2NSwiaWF0IjoxNjk3NDQzNDExfQ.eb4jhk73_unGnel4C9smgSFchbYrL70mUz4ZSMt5_eI-JPDC6w8mon4nBfdBx6bBaQkvTI_cdMKKSYJhZPRYyw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Saurabh\",\r\n    \"email\": \"sam34567@gmail.com\",\r\n    \"password\": \"Covid@93289\",\r\n    \"about\": \"I am Software Developer.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOSTNAME}}:{{PORT}}/api/users/",
+							"host": [
+								"{{HOSTNAME}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "user-  CreateUser",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Saurabh\",\r\n    \"email\": \"sam34567@gmail.com\",\r\n    \"password\": \"Covid@93289\",\r\n    \"about\": \"I am Software Developer.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOSTNAME}}:{{PORT}}/api/users/",
+									"host": [
+										"{{HOSTNAME}}"
+									],
+									"port": "{{PORT}}",
+									"path": [
+										"api",
+										"users",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 06 Feb 2023 16:58:34 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"userId\": 4,\n    \"name\": \"Saurabh\",\n    \"email\": \"sam34567@gmail.com\",\n    \"password\": \"Covid@93289\",\n    \"about\": \"I am Software Developer.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "user-  CreateUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYXVyYWJoQGdtYWlsLmNvbSIsImV4cCI6MTY5NzQ0ODMxMywiaWF0IjoxNjk3NDQ4MjU5fQ.a-ABO-2syjmFWA9wXSZJOz45NHfCeg3oA93g1e2_ON64_Jkf6s1QomO1v135E8gfvHvza9phSKgapfk7rYO_dA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYXVyYWJoQGdtYWlsLmNvbSIsImV4cCI6MTY5NzQ0MzQ2NSwiaWF0IjoxNjk3NDQzNDExfQ.eb4jhk73_unGnel4C9smgSFchbYrL70mUz4ZSMt5_eI-JPDC6w8mon4nBfdBx6bBaQkvTI_cdMKKSYJhZPRYyw",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Saurabh\",\r\n    \"email\": \"sam34567@gmail.com\",\r\n    \"password\": \"Covid@93289\",\r\n    \"about\": \"I am Software Developer.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOSTNAME}}:{{PORT}}/api/users/",
+							"host": [
+								"{{HOSTNAME}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "user-  CreateUser",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Saurabh\",\r\n    \"email\": \"sam34567@gmail.com\",\r\n    \"password\": \"Covid@93289\",\r\n    \"about\": \"I am Software Developer.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOSTNAME}}:{{PORT}}/api/users/",
+									"host": [
+										"{{HOSTNAME}}"
+									],
+									"port": "{{PORT}}",
+									"path": [
+										"api",
+										"users",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 06 Feb 2023 16:58:34 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"userId\": 4,\n    \"name\": \"Saurabh\",\n    \"email\": \"sam34567@gmail.com\",\n    \"password\": \"Covid@93289\",\n    \"about\": \"I am Software Developer.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "user-  getAllUsers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYXVyYWJoQGdtYWlsLmNvbSIsImV4cCI6MTY5NzQ0NDY2OSwiaWF0IjoxNjk3NDQ0NjE1fQ.d-wanVzmNDn0uxV6G537Ntq_LVWw-A6HFOha9GdY8_0szg6sC1YsSGxaOBE3TlTBIRgjGgSuYa3zSOk9Pcg13g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOSTNAME}}:{{PORT}}/api/users/",
+							"host": [
+								"{{HOSTNAME}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "user-  getAllUsers",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{HOSTNAME}}:{{PORT}}/api/v1/users/",
+									"host": [
+										"{{HOSTNAME}}"
+									],
+									"port": "{{PORT}}",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Oct 2023 08:32:14 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"userId\": 1,\n        \"name\": \"Saurabh Kumar\",\n        \"email\": \"saurabh@gmail.com\",\n        \"password\": \"$2a$10$6cVfcNRX01m9xMsH9McSje1TaN2cNW1/TVn5RyqkIeqjgr.yktIUO\",\n        \"about\": \"I am a teacher who teach programming.\",\n        \"roles\": [\n            {\n                \"roleId\": 502,\n                \"name\": \"NORMAL_USER\"\n            }\n        ]\n    },\n    {\n        \"userId\": 2,\n        \"name\": \"Saurabh\",\n        \"email\": \"sam34567@gmail.com\",\n        \"password\": \"Covid@93289\",\n        \"about\": \"I am Software Developer.\",\n        \"roles\": []\n    },\n    {\n        \"userId\": 3,\n        \"name\": \"Saurabh\",\n        \"email\": \"sam34567@gmail.com\",\n        \"password\": \"Covid@93289\",\n        \"about\": \"I am Software Developer.\",\n        \"roles\": []\n    },\n    {\n        \"userId\": 4,\n        \"name\": \"Saurabh\",\n        \"email\": \"sam34567@gmail.com\",\n        \"password\": \"Covid@93289\",\n        \"about\": \"I am Software Developer.\",\n        \"roles\": []\n    },\n    {\n        \"userId\": 5,\n        \"name\": \"Saurabh\",\n        \"email\": \"sam34567@gmail.com\",\n        \"password\": \"Covid@93289\",\n        \"about\": \"I am Software Developer.\",\n        \"roles\": []\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "user-  getUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOSTNAME}}:{{PORT}}/api/users/1",
+							"host": [
+								"{{HOSTNAME}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "user-  getUser",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{HOSTNAME}}:{{PORT}}/api/users/1",
+									"host": [
+										"{{HOSTNAME}}"
+									],
+									"port": "{{PORT}}",
+									"path": [
+										"api",
+										"users",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Oct 2023 08:36:48 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"userId\": 1,\n    \"name\": \"Saurabh Kumar\",\n    \"email\": \"saurabh@gmail.com\",\n    \"password\": \"$2a$10$6cVfcNRX01m9xMsH9McSje1TaN2cNW1/TVn5RyqkIeqjgr.yktIUO\",\n    \"about\": \"I am a teacher who teach programming.\",\n    \"roles\": [\n        {\n            \"roleId\": 502,\n            \"name\": \"NORMAL_USER\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "user-  deleteUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYXVyYWJoQGdtYWlsLmNvbSIsImV4cCI6MTY5NzQ0NTY5MSwiaWF0IjoxNjk3NDQ1NjM3fQ.IcpqVj-6cA0e79QElLR9w2DgehwUOPCjJn6kdMIRGW2jSvl-wwnpOWex-mUvAMqYMxJpB7mUjEe4H5jKGKGgdQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ4eXoxQGdtYWlsLmNvbSIsImV4cCI6MTY3OTIzMTc1MiwiaWF0IjoxNjc5MjMxNjk4fQ.P_9oXY3FSKWnomMSavp4VlzDB5FGnnQIUD7LzWLGbs-cpBG-hzIOCKlPIeGyRPUirv1IBMePPRFJLv_x71VF1g",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{HOSTNAME}}:{{PORT}}/api/users/3",
+							"host": [
+								"{{HOSTNAME}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"users",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "user-  deleteUser",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{HOSTNAME}}:{{PORT}}/api/users/4",
+									"host": [
+										"{{HOSTNAME}}"
+									],
+									"port": "{{PORT}}",
+									"path": [
+										"api",
+										"users",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 06 Feb 2023 16:59:16 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User Deleted Successfully!\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "user-  updateUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYXVyYWJoQGdtYWlsLmNvbSIsImV4cCI6MTY5NzQ0NTUxMCwiaWF0IjoxNjk3NDQ1NDU2fQ.7sbaRYz7b7cTFzs_C8tUsTwd6t_S0klqiNZzh4P1CfGymWZFiGx1JpgAujAgydJwO_ERZLqIBO-ynH8OER-jMQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Saurabh3\",\r\n    \"email\": \"saurabh@gmail.com\",\r\n    \"password\": \"Saurabh3\",\r\n    \"about\": \"Software Developer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOSTNAME}}:{{PORT}}/api/users/1",
+							"host": [
+								"{{HOSTNAME}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "user-  updateUser",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Saurabh3\",\r\n    \"email\": \"saurabh@gmail.com\",\r\n    \"password\": \"Saurabh3\",\r\n    \"about\": \"Software Developer\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOSTNAME}}:{{PORT}}/api/users/1",
+									"host": [
+										"{{HOSTNAME}}"
+									],
+									"port": "{{PORT}}",
+									"path": [
+										"api",
+										"users",
+										"1"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Oct 2023 08:53:47 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"timestamp\": 1697446427480,\n    \"status\": 401,\n    \"error\": \"Unauthorized\",\n    \"message\": \"Acciess Denied!!\",\n    \"path\": \"/api/users/1\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "post- CreatePost",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYXVyYWJoQGdtYWlsLmNvbSIsImV4cCI6MTY5NzQ0ODA3OSwiaWF0IjoxNjk3NDQ4MDI1fQ.pw5U3KqeB3frzrFFtE6mwR8YwVY2y8tMqIrZy_aEmD_YjypccNOWQJ_HND_0p1MQIVkNRHFUVtu1E6HFqz9SRQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Developer\",\r\n    \"content\": \"Programming language is used to  communicate with machine.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOSTNAME}}:{{PORT}}/api/user/1/category/1/posts",
+							"host": [
+								"{{HOSTNAME}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"user",
+								"1",
+								"category",
+								"1",
+								"posts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "post- CreatePost",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Developer\",\r\n    \"content\": \"Programming language is used to  communicate with machine.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOSTNAME}}:{{PORT}}/api/user/1/category/1/posts",
+									"host": [
+										"{{HOSTNAME}}"
+									],
+									"port": "{{PORT}}",
+									"path": [
+										"api",
+										"user",
+										"1",
+										"category",
+										"1",
+										"posts"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Oct 2023 09:20:34 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"postId\": \"9\",\n    \"title\": \"Developer\",\n    \"content\": \"Programming language is used to  communicate with machine.\",\n    \"imageName\": \"default.png\",\n    \"addedDate\": 1697448034530,\n    \"category\": {\n        \"categoryId\": 1,\n        \"categoryTitle\": \"cat1\",\n        \"categoryDiscription\": \"Mobile category Discription\",\n        \"post\": []\n    },\n    \"comments\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "post- getPostByUser",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "saurabh",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "saurabh",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOSTNAME}}:{{PORT}}/api/user/1/posts",
+							"host": [
+								"{{HOSTNAME}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"user",
+								"1",
+								"posts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "post- getPostByUser",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{HOSTNAME}}:{{PORT}}/api/user/1/posts",
+									"host": [
+										"{{HOSTNAME}}"
+									],
+									"port": "{{PORT}}",
+									"path": [
+										"api",
+										"user",
+										"1",
+										"posts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Oct 2023 09:21:13 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"postId\": \"9\",\n        \"title\": \"Developer\",\n        \"content\": \"Programming language is used to  communicate with machine.\",\n        \"imageName\": \"default.png\",\n        \"addedDate\": 1697448034530,\n        \"category\": {\n            \"categoryId\": 1,\n            \"categoryTitle\": \"cat1\",\n            \"categoryDiscription\": \"Mobile category Discription\",\n            \"post\": []\n        },\n        \"comments\": []\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "post- getAllPost - by using Token in Header",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYXVyYWJoQGdtYWlsLmNvbSIsImV4cCI6MTY5NzQ0ODIwNywiaWF0IjoxNjk3NDQ4MTUzfQ.gLNJzaEamN7VWqpSqBGCPtSaAcf0mrzyfT3_JpkQm2e7-2iSKhYfvKMMMRiGm0T8HxD3D0y58FHXoYGE9PnvWQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{HOSTNAME}}:{{PORT}}/api/posts/",
+							"host": [
+								"{{HOSTNAME}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"posts",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getPostByUser",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{HOSTNAME}}:{{PORT}}/api/user/2/posts",
+									"host": [
+										"{{HOSTNAME}}"
+									],
+									"port": "{{PORT}}",
+									"path": [
+										"api",
+										"user",
+										"2",
+										"posts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 06 Feb 2023 14:34:57 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"title\": \"What is Java programming language\",\n        \"content\": \"Java Programming language is used to  communicate with machine.\",\n        \"imageName\": \"default.png\",\n        \"addedDate\": \"2023-02-06T09:23:03.207+00:00\",\n        \"category\": {\n            \"categoryId\": 1,\n            \"categoryTitle\": \"Mobile\",\n            \"categoryDiscription\": \"Mobile category Discription\"\n        },\n        \"user\": {\n            \"userId\": 2,\n            \"name\": \"Saurabh2\",\n            \"email\": \"sam34567@gmail.com\",\n            \"password\": \"Covid@93289\",\n            \"about\": \"I am Software Developer.\"\n        }\n    }\n]"
+						},
+						{
+							"name": "post- getAllPost",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhYmNAZ21haWwuY29tIiwiZXhwIjoxNjc5MDU3NDAxLCJpYXQiOjE2NzkwNTczODN9.ugzARgWGqy_7T3m6MiuBNuGdt1XzG3Oonss9kY6aVw5DTLz0P3pND6JdaxGqcODI7KDHbL__mXAAOKP7vUFhyA",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{HOSTNAME}}:{{PORT}}/api/posts/",
+									"host": [
+										"{{HOSTNAME}}"
+									],
+									"port": "{{PORT}}",
+									"path": [
+										"api",
+										"posts",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Mar 2023 12:49:58 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"content\": [\n        {\n            \"postId\": \"1\",\n            \"title\": \"post3\",\n            \"content\": \".net Programming language is used to  communicate with machine.\",\n            \"imageName\": \"default.png\",\n            \"addedDate\": \"2023-03-11T09:04:26.542+00:00\",\n            \"category\": {\n                \"categoryId\": 1,\n                \"categoryTitle\": \"post1\",\n                \"categoryDiscription\": \"Mobile category Discription\",\n                \"post\": []\n            },\n            \"comments\": []\n        },\n        {\n            \"postId\": \"2\",\n            \"title\": \"post3\",\n            \"content\": \".net Programming language is used to  communicate with machine.\",\n            \"imageName\": \"default.png\",\n            \"addedDate\": \"2023-03-11T09:13:55.941+00:00\",\n            \"category\": {\n                \"categoryId\": 1,\n                \"categoryTitle\": \"post1\",\n                \"categoryDiscription\": \"Mobile category Discription\",\n                \"post\": []\n            },\n            \"comments\": []\n        }\n    ],\n    \"pageNumber\": 0,\n    \"firstPage\": true,\n    \"pageSize\": 10,\n    \"totalElements\": 2,\n    \"totalPages\": 1,\n    \"lastPage\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "post- getAllPost",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYXVyYWJoQGdtYWlsLmNvbSIsImV4cCI6MTY5NzQ0ODkxNSwiaWF0IjoxNjk3NDQ4ODYxfQ.Rh_3DXDBu8de1ND6GLcDGgc5CT97xHjIlFqLrAiu-dQgPkUjdJAU-1c2m8BsStcSP4k8-4XSJfWWYAKHDSjfdw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYXVyYWJoQGdtYWlsLmNvbSIsImV4cCI6MTY5NzQ0ODIwNywiaWF0IjoxNjk3NDQ4MTUzfQ.gLNJzaEamN7VWqpSqBGCPtSaAcf0mrzyfT3_JpkQm2e7-2iSKhYfvKMMMRiGm0T8HxD3D0y58FHXoYGE9PnvWQ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{HOSTNAME}}:{{PORT}}/api/posts/",
+							"host": [
+								"{{HOSTNAME}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"posts",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getPostByUser",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{HOSTNAME}}:{{PORT}}/api/user/2/posts",
+									"host": [
+										"{{HOSTNAME}}"
+									],
+									"port": "{{PORT}}",
+									"path": [
+										"api",
+										"user",
+										"2",
+										"posts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 06 Feb 2023 14:34:57 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"title\": \"What is Java programming language\",\n        \"content\": \"Java Programming language is used to  communicate with machine.\",\n        \"imageName\": \"default.png\",\n        \"addedDate\": \"2023-02-06T09:23:03.207+00:00\",\n        \"category\": {\n            \"categoryId\": 1,\n            \"categoryTitle\": \"Mobile\",\n            \"categoryDiscription\": \"Mobile category Discription\"\n        },\n        \"user\": {\n            \"userId\": 2,\n            \"name\": \"Saurabh2\",\n            \"email\": \"sam34567@gmail.com\",\n            \"password\": \"Covid@93289\",\n            \"about\": \"I am Software Developer.\"\n        }\n    }\n]"
+						},
+						{
+							"name": "post- getAllPost",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhYmNAZ21haWwuY29tIiwiZXhwIjoxNjc5MDU3NDAxLCJpYXQiOjE2NzkwNTczODN9.ugzARgWGqy_7T3m6MiuBNuGdt1XzG3Oonss9kY6aVw5DTLz0P3pND6JdaxGqcODI7KDHbL__mXAAOKP7vUFhyA",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{HOSTNAME}}:{{PORT}}/api/posts/",
+									"host": [
+										"{{HOSTNAME}}"
+									],
+									"port": "{{PORT}}",
+									"path": [
+										"api",
+										"posts",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Mar 2023 12:49:58 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"content\": [\n        {\n            \"postId\": \"1\",\n            \"title\": \"post3\",\n            \"content\": \".net Programming language is used to  communicate with machine.\",\n            \"imageName\": \"default.png\",\n            \"addedDate\": \"2023-03-11T09:04:26.542+00:00\",\n            \"category\": {\n                \"categoryId\": 1,\n                \"categoryTitle\": \"post1\",\n                \"categoryDiscription\": \"Mobile category Discription\",\n                \"post\": []\n            },\n            \"comments\": []\n        },\n        {\n            \"postId\": \"2\",\n            \"title\": \"post3\",\n            \"content\": \".net Programming language is used to  communicate with machine.\",\n            \"imageName\": \"default.png\",\n            \"addedDate\": \"2023-03-11T09:13:55.941+00:00\",\n            \"category\": {\n                \"categoryId\": 1,\n                \"categoryTitle\": \"post1\",\n                \"categoryDiscription\": \"Mobile category Discription\",\n                \"post\": []\n            },\n            \"comments\": []\n        }\n    ],\n    \"pageNumber\": 0,\n    \"firstPage\": true,\n    \"pageSize\": 10,\n    \"totalElements\": 2,\n    \"totalPages\": 1,\n    \"lastPage\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "post- getPostByUserId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYXVyYWJoQGdtYWlsLmNvbSIsImV4cCI6MTY5NzQ0ODc1NiwiaWF0IjoxNjk3NDQ4NzAyfQ.-Tcs6PX48aDB_56ZzDqcq5KPSpUYWrYS_pc9pE9n8Gfx3XhgKDja7PgMjgD4pv959gMZD40QqmA-1L5Qqa8sDA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOSTNAME}}:{{PORT}}/api/user/1/posts",
+							"host": [
+								"{{HOSTNAME}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"user",
+								"1",
+								"posts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "post- getPostByUserId",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{HOSTNAME}}:{{PORT}}/api/user/1/posts",
+									"host": [
+										"{{HOSTNAME}}"
+									],
+									"port": "{{PORT}}",
+									"path": [
+										"api",
+										"user",
+										"1",
+										"posts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Oct 2023 09:37:45 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"postId\": \"9\",\n        \"title\": \"Developer\",\n        \"content\": \"Programming language is used to  communicate with machine.\",\n        \"imageName\": \"default.png\",\n        \"addedDate\": 1697448034530,\n        \"category\": {\n            \"categoryId\": 1,\n            \"categoryTitle\": \"cat1\",\n            \"categoryDiscription\": \"Mobile category Discription\",\n            \"post\": []\n        },\n        \"comments\": []\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "post- getAllPost By pageNumber, pageSize,sortBy,sortDir",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOSTNAME}}:{{PORT}}/api/posts?pageNumber=0&pageSize=10&sortBy=postId&sortDir=desc",
+							"host": [
+								"{{HOSTNAME}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"posts"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "0"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "sortBy",
+									"value": "postId"
+								},
+								{
+									"key": "sortDir",
+									"value": "desc"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getAllPost",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{HOSTNAME}}:{{PORT}}/api/posts",
+									"host": [
+										"{{HOSTNAME}}"
+									],
+									"port": "{{PORT}}",
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 06 Feb 2023 14:40:31 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"title\": \"What is Java programming language\",\n        \"content\": \"Java Programming language is used to  communicate with machine.\",\n        \"imageName\": \"default.png\",\n        \"addedDate\": \"2023-02-06T09:22:49.197+00:00\",\n        \"category\": {\n            \"categoryId\": 1,\n            \"categoryTitle\": \"Mobile\",\n            \"categoryDiscription\": \"Mobile category Discription\"\n        },\n        \"user\": {\n            \"userId\": 1,\n            \"name\": \"Saurabh1\",\n            \"email\": \"sam34567@gmail.com\",\n            \"password\": \"Covid@93289\",\n            \"about\": \"I am Software Developer.\"\n        }\n    },\n    {\n        \"title\": \"What is Java programming language\",\n        \"content\": \"Java Programming language is used to  communicate with machine.\",\n        \"imageName\": \"default.png\",\n        \"addedDate\": \"2023-02-06T09:22:54.455+00:00\",\n        \"category\": {\n            \"categoryId\": 2,\n            \"categoryTitle\": \"Mobile\",\n            \"categoryDiscription\": \"Mobile category Discription\"\n        },\n        \"user\": {\n            \"userId\": 1,\n            \"name\": \"Saurabh1\",\n            \"email\": \"sam34567@gmail.com\",\n            \"password\": \"Covid@93289\",\n            \"about\": \"I am Software Developer.\"\n        }\n    },\n    {\n        \"title\": \"What is Java programming language\",\n        \"content\": \"Java Programming language is used to  communicate with machine.\",\n        \"imageName\": \"default.png\",\n        \"addedDate\": \"2023-02-06T09:22:57.897+00:00\",\n        \"category\": {\n            \"categoryId\": 3,\n            \"categoryTitle\": \"Mobile\",\n            \"categoryDiscription\": \"Mobile category Discription\"\n        },\n        \"user\": {\n            \"userId\": 1,\n            \"name\": \"Saurabh1\",\n            \"email\": \"sam34567@gmail.com\",\n            \"password\": \"Covid@93289\",\n            \"about\": \"I am Software Developer.\"\n        }\n    },\n    {\n        \"title\": \"What is Java programming language\",\n        \"content\": \"Java Programming language is used to  communicate with machine.\",\n        \"imageName\": \"default.png\",\n        \"addedDate\": \"2023-02-06T09:23:03.207+00:00\",\n        \"category\": {\n            \"categoryId\": 1,\n            \"categoryTitle\": \"Mobile\",\n            \"categoryDiscription\": \"Mobile category Discription\"\n        },\n        \"user\": {\n            \"userId\": 2,\n            \"name\": \"Saurabh2\",\n            \"email\": \"sam34567@gmail.com\",\n            \"password\": \"Covid@93289\",\n            \"about\": \"I am Software Developer.\"\n        }\n    },\n    {\n        \"title\": \"What is Java programming language\",\n        \"content\": \"Java Programming language is used to  communicate with machine.\",\n        \"imageName\": \"default.png\",\n        \"addedDate\": \"2023-02-06T09:23:09.335+00:00\",\n        \"category\": {\n            \"categoryId\": 1,\n            \"categoryTitle\": \"Mobile\",\n            \"categoryDiscription\": \"Mobile category Discription\"\n        },\n        \"user\": {\n            \"userId\": 3,\n            \"name\": \"Saurabh3\",\n            \"email\": \"sam34567@gmail.com\",\n            \"password\": \"Covid@93289\",\n            \"about\": \"I am Software Developer.\"\n        }\n    },\n    {\n        \"title\": \"What is Java programming language\",\n        \"content\": \"Java Programming language is used to  communicate with machine.\",\n        \"imageName\": \"default.png\",\n        \"addedDate\": \"2023-02-06T09:23:12.249+00:00\",\n        \"category\": {\n            \"categoryId\": 2,\n            \"categoryTitle\": \"Mobile\",\n            \"categoryDiscription\": \"Mobile category Discription\"\n        },\n        \"user\": {\n            \"userId\": 3,\n            \"name\": \"Saurabh3\",\n            \"email\": \"sam34567@gmail.com\",\n            \"password\": \"Covid@93289\",\n            \"about\": \"I am Software Developer.\"\n        }\n    },\n    {\n        \"title\": \"What is Java programming language\",\n        \"content\": \"Java Programming language is used to  communicate with machine.\",\n        \"imageName\": \"default.png\",\n        \"addedDate\": \"2023-02-06T14:31:05.672+00:00\",\n        \"category\": {\n            \"categoryId\": 2,\n            \"categoryTitle\": \"Mobile\",\n            \"categoryDiscription\": \"Mobile category Discription\"\n        },\n        \"user\": {\n            \"userId\": 3,\n            \"name\": \"Saurabh3\",\n            \"email\": \"sam34567@gmail.com\",\n            \"password\": \"Covid@93289\",\n            \"about\": \"I am Software Developer.\"\n        }\n    }\n]"
+						},
+						{
+							"name": "post- getAllPost",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{HOSTNAME}}:{{PORT}}/api/posts?pageNumber=0&pageSize=10&sortBy=title",
+									"host": [
+										"{{HOSTNAME}}"
+									],
+									"port": "{{PORT}}",
+									"path": [
+										"api",
+										"posts"
+									],
+									"query": [
+										{
+											"key": "pageNumber",
+											"value": "0"
+										},
+										{
+											"key": "pageSize",
+											"value": "10"
+										},
+										{
+											"key": "sortBy",
+											"value": "title"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 Feb 2023 08:21:33 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"content\": [\n        {\n            \"postId\": \"8\",\n            \"title\": \"What is C programming language\",\n            \"content\": \"C Programming language is used to  communicate with machine.\",\n            \"imageName\": \"default.png\",\n            \"addedDate\": \"2023-02-07T07:19:22.001+00:00\",\n            \"category\": {\n                \"categoryId\": 2,\n                \"categoryTitle\": \"Mobile\",\n                \"categoryDiscription\": \"Sourav Mobile category Discription\"\n            },\n            \"user\": {\n                \"userId\": 3,\n                \"name\": \"Saurabh3\",\n                \"email\": \"sam34567@gmail.com\",\n                \"password\": \"Covid@93289\",\n                \"about\": \"I am Software Developer.\"\n            }\n        },\n        {\n            \"postId\": \"16\",\n            \"title\": \"What is C++ programming language\",\n            \"content\": \"C++ Programming language is used to  communicate with machine.\",\n            \"imageName\": \"default.png\",\n            \"addedDate\": \"2023-02-07T07:25:56.087+00:00\",\n            \"category\": {\n                \"categoryId\": 2,\n                \"categoryTitle\": \"Mobile\",\n                \"categoryDiscription\": \"Sourav Mobile category Discription\"\n            },\n            \"user\": {\n                \"userId\": 3,\n                \"name\": \"Saurabh3\",\n                \"email\": \"sam34567@gmail.com\",\n                \"password\": \"Covid@93289\",\n                \"about\": \"I am Software Developer.\"\n            }\n        },\n        {\n            \"postId\": \"15\",\n            \"title\": \"What is C++ programming language\",\n            \"content\": \"C++ Programming language is used to  communicate with machine.\",\n            \"imageName\": \"default.png\",\n            \"addedDate\": \"2023-02-07T07:25:55.194+00:00\",\n            \"category\": {\n                \"categoryId\": 2,\n                \"categoryTitle\": \"Mobile\",\n                \"categoryDiscription\": \"Sourav Mobile category Discription\"\n            },\n            \"user\": {\n                \"userId\": 3,\n                \"name\": \"Saurabh3\",\n                \"email\": \"sam34567@gmail.com\",\n                \"password\": \"Covid@93289\",\n                \"about\": \"I am Software Developer.\"\n            }\n        },\n        {\n            \"postId\": \"11\",\n            \"title\": \"What is C++ programming language\",\n            \"content\": \"C++ Programming language is used to  communicate with machine.\",\n            \"imageName\": \"default.png\",\n            \"addedDate\": \"2023-02-07T07:20:34.093+00:00\",\n            \"category\": {\n                \"categoryId\": 2,\n                \"categoryTitle\": \"Mobile\",\n                \"categoryDiscription\": \"Sourav Mobile category Discription\"\n            },\n            \"user\": {\n                \"userId\": 3,\n                \"name\": \"Saurabh3\",\n                \"email\": \"sam34567@gmail.com\",\n                \"password\": \"Covid@93289\",\n                \"about\": \"I am Software Developer.\"\n            }\n        },\n        {\n            \"postId\": \"13\",\n            \"title\": \"What is C++ programming language\",\n            \"content\": \"C++ Programming language is used to  communicate with machine.\",\n            \"imageName\": \"default.png\",\n            \"addedDate\": \"2023-02-07T07:25:43.546+00:00\",\n            \"category\": {\n                \"categoryId\": 2,\n                \"categoryTitle\": \"Mobile\",\n                \"categoryDiscription\": \"Sourav Mobile category Discription\"\n            },\n            \"user\": {\n                \"userId\": 3,\n                \"name\": \"Saurabh3\",\n                \"email\": \"sam34567@gmail.com\",\n                \"password\": \"Covid@93289\",\n                \"about\": \"I am Software Developer.\"\n            }\n        },\n        {\n            \"postId\": \"12\",\n            \"title\": \"What is C++ programming language\",\n            \"content\": \"C++ Programming language is used to  communicate with machine.\",\n            \"imageName\": \"default.png\",\n            \"addedDate\": \"2023-02-07T07:25:20.364+00:00\",\n            \"category\": {\n                \"categoryId\": 2,\n                \"categoryTitle\": \"Mobile\",\n                \"categoryDiscription\": \"Sourav Mobile category Discription\"\n            },\n            \"user\": {\n                \"userId\": 2,\n                \"name\": \"Saurabh3\",\n                \"email\": \"sam34567@gmail.com\",\n                \"password\": \"Saurabh3\",\n                \"about\": \"Software Developer\"\n            }\n        },\n        {\n            \"postId\": \"14\",\n            \"title\": \"What is C++ programming language\",\n            \"content\": \"C++ Programming language is used to  communicate with machine.\",\n            \"imageName\": \"default.png\",\n            \"addedDate\": \"2023-02-07T07:25:54.052+00:00\",\n            \"category\": {\n                \"categoryId\": 2,\n                \"categoryTitle\": \"Mobile\",\n                \"categoryDiscription\": \"Sourav Mobile category Discription\"\n            },\n            \"user\": {\n                \"userId\": 3,\n                \"name\": \"Saurabh3\",\n                \"email\": \"sam34567@gmail.com\",\n                \"password\": \"Covid@93289\",\n                \"about\": \"I am Software Developer.\"\n            }\n        },\n        {\n            \"postId\": \"9\",\n            \"title\": \"What is C1 programming language\",\n            \"content\": \"C1 Programming language is used to  communicate with machine.\",\n            \"imageName\": \"default.png\",\n            \"addedDate\": \"2023-02-07T07:19:27.104+00:00\",\n            \"category\": {\n                \"categoryId\": 2,\n                \"categoryTitle\": \"Mobile\",\n                \"categoryDiscription\": \"Sourav Mobile category Discription\"\n            },\n            \"user\": {\n                \"userId\": 3,\n                \"name\": \"Saurabh3\",\n                \"email\": \"sam34567@gmail.com\",\n                \"password\": \"Covid@93289\",\n                \"about\": \"I am Software Developer.\"\n            }\n        },\n        {\n            \"postId\": \"10\",\n            \"title\": \"What is C11 programming language\",\n            \"content\": \"C11 Programming language is used to  communicate with machine.\",\n            \"imageName\": \"default.png\",\n            \"addedDate\": \"2023-02-07T07:19:30.325+00:00\",\n            \"category\": {\n                \"categoryId\": 2,\n                \"categoryTitle\": \"Mobile\",\n                \"categoryDiscription\": \"Sourav Mobile category Discription\"\n            },\n            \"user\": {\n                \"userId\": 3,\n                \"name\": \"Saurabh3\",\n                \"email\": \"sam34567@gmail.com\",\n                \"password\": \"Covid@93289\",\n                \"about\": \"I am Software Developer.\"\n            }\n        },\n        {\n            \"postId\": \"2\",\n            \"title\": \"What is Java programming language\",\n            \"content\": \"Java Programming language is used to  communicate with machine.\",\n            \"imageName\": \"default.png\",\n            \"addedDate\": \"2023-02-06T09:22:54.455+00:00\",\n            \"category\": {\n                \"categoryId\": 2,\n                \"categoryTitle\": \"Mobile\",\n                \"categoryDiscription\": \"Sourav Mobile category Discription\"\n            },\n            \"user\": {\n                \"userId\": 1,\n                \"name\": \"Saurabh1\",\n                \"email\": \"sam34567@gmail.com\",\n                \"password\": \"Covid@93289\",\n                \"about\": \"I am Software Developer.\"\n            }\n        }\n    ],\n    \"pageNumber\": 0,\n    \"firstPage\": true,\n    \"pageSize\": 10,\n    \"totalElements\": 15,\n    \"totalPages\": 2,\n    \"lastPage\": false\n}"
+						},
+						{
+							"name": "post- getAllPost",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{HOSTNAME}}:{{PORT}}/api/posts?pageNumber=0&pageSize=10&sortBy=postId&sortDir=asc",
+									"host": [
+										"{{HOSTNAME}}"
+									],
+									"port": "{{PORT}}",
+									"path": [
+										"api",
+										"posts"
+									],
+									"query": [
+										{
+											"key": "pageNumber",
+											"value": "0"
+										},
+										{
+											"key": "pageSize",
+											"value": "10"
+										},
+										{
+											"key": "sortBy",
+											"value": "postId"
+										},
+										{
+											"key": "sortDir",
+											"value": "asc"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 Feb 2023 08:23:09 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"content\": [\n        {\n            \"postId\": \"2\",\n            \"title\": \"What is Java programming language\",\n            \"content\": \"Java Programming language is used to  communicate with machine.\",\n            \"imageName\": \"default.png\",\n            \"addedDate\": \"2023-02-06T09:22:54.455+00:00\",\n            \"category\": {\n                \"categoryId\": 2,\n                \"categoryTitle\": \"Mobile\",\n                \"categoryDiscription\": \"Sourav Mobile category Discription\"\n            },\n            \"user\": {\n                \"userId\": 1,\n                \"name\": \"Saurabh1\",\n                \"email\": \"sam34567@gmail.com\",\n                \"password\": \"Covid@93289\",\n                \"about\": \"I am Software Developer.\"\n            }\n        },\n        {\n            \"postId\": \"3\",\n            \"title\": \"What is Java programming language\",\n            \"content\": \"Java Programming language is used to  communicate with machine.\",\n            \"imageName\": \"default.png\",\n            \"addedDate\": \"2023-02-06T09:22:57.897+00:00\",\n            \"category\": {\n                \"categoryId\": 3,\n                \"categoryTitle\": \"Saurabh-Vikas\",\n                \"categoryDiscription\": \"Saurabh vikash is good\"\n            },\n            \"user\": {\n                \"userId\": 1,\n                \"name\": \"Saurabh1\",\n                \"email\": \"sam34567@gmail.com\",\n                \"password\": \"Covid@93289\",\n                \"about\": \"I am Software Developer.\"\n            }\n        },\n        {\n            \"postId\": \"4\",\n            \"title\": \"What is Java programming language\",\n            \"content\": \"Java Programming language is used to  communicate with machine.\",\n            \"imageName\": \"default.png\",\n            \"addedDate\": \"2023-02-06T09:23:03.207+00:00\",\n            \"category\": {\n                \"categoryId\": 1,\n                \"categoryTitle\": \"Mobile\",\n                \"categoryDiscription\": \"Mobile category Discription\"\n            },\n            \"user\": {\n                \"userId\": 2,\n                \"name\": \"Saurabh3\",\n                \"email\": \"sam34567@gmail.com\",\n                \"password\": \"Saurabh3\",\n                \"about\": \"Software Developer\"\n            }\n        },\n        {\n            \"postId\": \"5\",\n            \"title\": \"What is Java programming language\",\n            \"content\": \"Java Programming language is used to  communicate with machine.\",\n            \"imageName\": \"default.png\",\n            \"addedDate\": \"2023-02-06T09:23:09.335+00:00\",\n            \"category\": {\n                \"categoryId\": 1,\n                \"categoryTitle\": \"Mobile\",\n                \"categoryDiscription\": \"Mobile category Discription\"\n            },\n            \"user\": {\n                \"userId\": 3,\n                \"name\": \"Saurabh3\",\n                \"email\": \"sam34567@gmail.com\",\n                \"password\": \"Covid@93289\",\n                \"about\": \"I am Software Developer.\"\n            }\n        },\n        {\n            \"postId\": \"6\",\n            \"title\": \"What is Java programming language\",\n            \"content\": \"Java Programming language is used to  communicate with machine.\",\n            \"imageName\": \"default.png\",\n            \"addedDate\": \"2023-02-06T09:23:12.249+00:00\",\n            \"category\": {\n                \"categoryId\": 2,\n                \"categoryTitle\": \"Mobile\",\n                \"categoryDiscription\": \"Sourav Mobile category Discription\"\n            },\n            \"user\": {\n                \"userId\": 3,\n                \"name\": \"Saurabh3\",\n                \"email\": \"sam34567@gmail.com\",\n                \"password\": \"Covid@93289\",\n                \"about\": \"I am Software Developer.\"\n            }\n        },\n        {\n            \"postId\": \"7\",\n            \"title\": \"What is Java programming language\",\n            \"content\": \"Java Programming language is used to  communicate with machine.\",\n            \"imageName\": \"default.png\",\n            \"addedDate\": \"2023-02-06T14:31:05.672+00:00\",\n            \"category\": {\n                \"categoryId\": 2,\n                \"categoryTitle\": \"Mobile\",\n                \"categoryDiscription\": \"Sourav Mobile category Discription\"\n            },\n            \"user\": {\n                \"userId\": 3,\n                \"name\": \"Saurabh3\",\n                \"email\": \"sam34567@gmail.com\",\n                \"password\": \"Covid@93289\",\n                \"about\": \"I am Software Developer.\"\n            }\n        },\n        {\n            \"postId\": \"8\",\n            \"title\": \"What is C programming language\",\n            \"content\": \"C Programming language is used to  communicate with machine.\",\n            \"imageName\": \"default.png\",\n            \"addedDate\": \"2023-02-07T07:19:22.001+00:00\",\n            \"category\": {\n                \"categoryId\": 2,\n                \"categoryTitle\": \"Mobile\",\n                \"categoryDiscription\": \"Sourav Mobile category Discription\"\n            },\n            \"user\": {\n                \"userId\": 3,\n                \"name\": \"Saurabh3\",\n                \"email\": \"sam34567@gmail.com\",\n                \"password\": \"Covid@93289\",\n                \"about\": \"I am Software Developer.\"\n            }\n        },\n        {\n            \"postId\": \"9\",\n            \"title\": \"What is C1 programming language\",\n            \"content\": \"C1 Programming language is used to  communicate with machine.\",\n            \"imageName\": \"default.png\",\n            \"addedDate\": \"2023-02-07T07:19:27.104+00:00\",\n            \"category\": {\n                \"categoryId\": 2,\n                \"categoryTitle\": \"Mobile\",\n                \"categoryDiscription\": \"Sourav Mobile category Discription\"\n            },\n            \"user\": {\n                \"userId\": 3,\n                \"name\": \"Saurabh3\",\n                \"email\": \"sam34567@gmail.com\",\n                \"password\": \"Covid@93289\",\n                \"about\": \"I am Software Developer.\"\n            }\n        },\n        {\n            \"postId\": \"10\",\n            \"title\": \"What is C11 programming language\",\n            \"content\": \"C11 Programming language is used to  communicate with machine.\",\n            \"imageName\": \"default.png\",\n            \"addedDate\": \"2023-02-07T07:19:30.325+00:00\",\n            \"category\": {\n                \"categoryId\": 2,\n                \"categoryTitle\": \"Mobile\",\n                \"categoryDiscription\": \"Sourav Mobile category Discription\"\n            },\n            \"user\": {\n                \"userId\": 3,\n                \"name\": \"Saurabh3\",\n                \"email\": \"sam34567@gmail.com\",\n                \"password\": \"Covid@93289\",\n                \"about\": \"I am Software Developer.\"\n            }\n        },\n        {\n            \"postId\": \"11\",\n            \"title\": \"What is C++ programming language\",\n            \"content\": \"C++ Programming language is used to  communicate with machine.\",\n            \"imageName\": \"default.png\",\n            \"addedDate\": \"2023-02-07T07:20:34.093+00:00\",\n            \"category\": {\n                \"categoryId\": 2,\n                \"categoryTitle\": \"Mobile\",\n                \"categoryDiscription\": \"Sourav Mobile category Discription\"\n            },\n            \"user\": {\n                \"userId\": 3,\n                \"name\": \"Saurabh3\",\n                \"email\": \"sam34567@gmail.com\",\n                \"password\": \"Covid@93289\",\n                \"about\": \"I am Software Developer.\"\n            }\n        }\n    ],\n    \"pageNumber\": 0,\n    \"firstPage\": true,\n    \"pageSize\": 10,\n    \"totalElements\": 15,\n    \"totalPages\": 2,\n    \"lastPage\": false\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "cat- CreateCategory",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYXVyYWJoQGdtYWlsLmNvbSIsImV4cCI6MTY5NzQ0NTgxNSwiaWF0IjoxNjk3NDQ1NzYxfQ.ABLyqRvu3mEbhGczL7yqBZq-g7uab6IsoWF9NWMUsT4VNmdEoEb0aEtbMy6ZQiXQOCMvS4lDnmzjquJLymBEDA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryTitle\": \"cat1\",\r\n    \"categoryDiscription\": \"Mobile category Discription\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOSTNAME}}:{{PORT}}/api/category/",
+							"host": [
+								"{{HOSTNAME}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"category",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "cat- CreateCategory",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"categoryTitle\": \"cat1\",\r\n    \"categoryDiscription\": \"Mobile category Discription\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOSTNAME}}:{{PORT}}/api/category/",
+									"host": [
+										"{{HOSTNAME}}"
+									],
+									"port": "{{PORT}}",
+									"path": [
+										"api",
+										"category",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Oct 2023 08:42:56 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"categoryId\": 1,\n    \"categoryTitle\": \"cat1\",\n    \"categoryDiscription\": \"Mobile category Discription\"\n}"
+						}
+					]
+				},
+				{
+					"name": "cat- getCategory",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{HOSTNAME}}:{{PORT}}/api/category/1",
+							"host": [
+								"{{HOSTNAME}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"category",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "cat- getCategory",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{HOSTNAME}}:{{PORT}}/api/category/1",
+									"host": [
+										"{{HOSTNAME}}"
+									],
+									"port": "{{PORT}}",
+									"path": [
+										"api",
+										"category",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Oct 2023 08:44:45 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"categoryId\": 1,\n    \"categoryTitle\": \"cat1\",\n    \"categoryDiscription\": \"Mobile category Discription\"\n}"
+						}
+					]
+				},
+				{
+					"name": "cat- updateCategory",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYXVyYWJoQGdtYWlsLmNvbSIsImV4cCI6MTY5NzQ0NjAyMCwiaWF0IjoxNjk3NDQ1OTY2fQ.9ow0bBeN1nnqvprpcufxYIVONAW2M5ISwSaYKtrKw4B-A2jzktVcLX2XmeLfBo7aNJoUWwxd-ezM-QYqGjB1jQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryTitle\": \"Mobile\",\r\n    \"categoryDiscription\": \"Mobile is electronic.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOSTNAME}}:{{PORT}}/api/category/2",
+							"host": [
+								"{{HOSTNAME}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"category",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "cat- updateCategory",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"categoryTitle\": \"Mobile\",\r\n    \"categoryDiscription\": \"Mobile is electronic.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOSTNAME}}:{{PORT}}/api/category/2",
+									"host": [
+										"{{HOSTNAME}}"
+									],
+									"port": "{{PORT}}",
+									"path": [
+										"api",
+										"category",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Oct 2023 08:46:19 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"categoryId\": 2,\n    \"categoryTitle\": \"Mobile\",\n    \"categoryDiscription\": \"Mobile is electronic.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "cat- deleteCategory",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYXVyYWJoQGdtYWlsLmNvbSIsImV4cCI6MTY5NzQ0NjI4MCwiaWF0IjoxNjk3NDQ2MjI2fQ.kdvQ5dZYtVMryC5gO90jHm3vkqzsdPksDYYzM7girO_Pc7AhA40-KzY4R9xdFymvmnyliLrEZNJsklZmeESzxw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{HOSTNAME}}:{{PORT}}/api/category/2",
+							"host": [
+								"{{HOSTNAME}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"category",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "cat- deleteCategory",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{HOSTNAME}}:{{PORT}}/api/category/2",
+									"host": [
+										"{{HOSTNAME}}"
+									],
+									"port": "{{PORT}}",
+									"path": [
+										"api",
+										"category",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Oct 2023 08:50:49 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Category Deleted Successfully!\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "cat- getAllCategory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOSTNAME}}:{{PORT}}/api/category/",
+							"host": [
+								"{{HOSTNAME}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"category",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "cat- getAllCategory",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{HOSTNAME}}:{{PORT}}/api/category/",
+									"host": [
+										"{{HOSTNAME}}"
+									],
+									"port": "{{PORT}}",
+									"path": [
+										"api",
+										"category",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Oct 2023 08:53:02 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"categoryId\": 1,\n        \"categoryTitle\": \"cat1\",\n        \"categoryDiscription\": \"Mobile category Discription\"\n    }\n]"
+						}
+					]
+				}
+			]
+		}
+	]
+}
